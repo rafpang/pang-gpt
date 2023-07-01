@@ -22,17 +22,10 @@ export default function Home() {
               <h1>Welcome to PangGPT</h1>
               <Image src={pdt} width={200} height={200} alt="robot" />
               <div className="flex items-center ">
-                <Link
-                  href="/api/auth/login"
-                  className="rounded-md bg-purple-500 px-4 py-2 text-white hover:bg-purple-600"
-                >
+                <Link href="/api/auth/login" className="btn">
                   Login
                 </Link>
-                <Link
-                  href="/api/auth/signup"
-                  className="rounded-md bg-purple-500 px-4 py-2 text-white
-              hover:bg-purple-600"
-                >
+                <Link href="/api/auth/signup" className="btn">
                   Signup
                 </Link>
               </div>
