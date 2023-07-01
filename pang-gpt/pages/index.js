@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { getSession } from "@auth0/nextjs-auth0";
+import pdt from "../public/favicon.png";
 
 export default function Home() {
   const { isLoading, error, user } = useUser();
@@ -16,21 +18,25 @@ export default function Home() {
         <div>
           {!!user && <Link href="/api/auth/logout">Logout</Link>}
           {!user && (
-            <>
-              <Link
-                href="/api/auth/login"
-                className="rounded-md bg-emerald-500 px-4 py-2 text-white hover:bg-emerald-600"
-              >
-                Login
-              </Link>
-              <Link
-                href="/api/auth/signup"
-                className="rounded-md bg-emerald-500 px-4 py-2 text-white
-              hover:bg-emerald-600"
-              >
-                Signup
-              </Link>
-            </>
+            <div className="bg-white-300 max-w-sm rounded-lg border border-gray-200 p-4 shadow-md sm:p-6 lg:p-8">
+              <h1>Welcome to PangGPT</h1>
+              <Image src={pdt} width={200} height={200} alt="robot" />
+              <div className="flex items-center ">
+                <Link
+                  href="/api/auth/login"
+                  className="rounded-md bg-purple-500 px-4 py-2 text-white hover:bg-purple-600"
+                >
+                  Login
+                </Link>
+                <Link
+                  href="/api/auth/signup"
+                  className="rounded-md bg-purple-500 px-4 py-2 text-white
+              hover:bg-purple-600"
+                >
+                  Signup
+                </Link>
+              </div>
+            </div>
           )}
         </div>
       </div>
