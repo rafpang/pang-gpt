@@ -6,7 +6,7 @@ export default function Home() {
       <Head>
         <title>Next JS ChatGPT Starter</title>
       </Head>
-      <h1>Welcome to the Chat Page</h1>
+      <h1>Welcome to the Chat Page; Logged In</h1>
     </div>
   );
 }
